@@ -1,27 +1,38 @@
 public class Human {
 
-    int yearOfBirth;
-    String name;
-    String town;
-    String post;
+   public int yearOfBirth;
+   public String name;
+   public String town;
+   public String post;
 
 
     Human(String name, String town, int yearOfBirth, String post) {
         this.name = name;
         this.town = town;
-        this.yearOfBirth = yearOfBirth;
         this.post = post;
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+
+        if (name == null) {
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+
+            if (town == null) {
+                this.town = "Информация не указана";
+            } else {
+                this.town = town;
+            }
+
+            if (post == null) {
+                this.post = "Информация не указана";
+            } else {
+            this.post = post;
+        }
     }
 
-    void human() {
-        System.out.println("Привет!Меня зовут " + name + ".");
-        System.out.println("Я из города - " + town + " .");
-        System.out.println("Я родился в " + yearOfBirth + " году.");
-        System.out.println("Я работаю на должности: " + post );
-        System.out.println("Будем знакомы!");
 
-    }
-
-
-
-}
+}}
