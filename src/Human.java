@@ -1,10 +1,33 @@
 public class Human {
 
-   public int yearOfBirth;
+   private int yearOfBirth;
    public String name;
-   public String town;
+   private String town;
    public String post;
 
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(int yearOfBirth) {
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = yearOfBirth;
+        }
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town == null) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+    }
 
     Human(String name, String town, int yearOfBirth, String post) {
         this.name = name;
@@ -33,6 +56,8 @@ public class Human {
             this.post = post;
         }
     }
+
+
 
 
 }}
